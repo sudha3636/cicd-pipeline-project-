@@ -13,7 +13,7 @@ A full end-to-end CI/CD pipeline built with GitHub Actions, Docker, and cloud de
 Code Push → Lint → Test → Build Docker Image → Push to Registry → Deploy
 
 ## Getting Started
-git clone https://github.com/your-username/cicd-pipeline-project.git
+git clone https://github.com/sudha3636/cicd-pipeline-project.git
 cd cicd-pipeline-project
 npm install   # or pip install -r requirements.txt
 npm test
