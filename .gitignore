@@ -1,6 +1,42 @@
-node_modules/
+# Maven
+target/
+*.class
+*.jar
+*.war
+*.ear
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+release.properties
+
+# IDE files
+.idea/
+*.iml
+*.iws
+.vscode/
+.settings/
+.classpath
+.project
+
+# Environment
 .env
-coverage/
-*.log
+.env.local
+*.env
+
+# OS
 .DS_Store
-dist/
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# SonarQube
+.sonar/
+sonar/
+
+# Docker
+.dockerignore
+
+# Coverage
+coverage/
