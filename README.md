@@ -20,6 +20,11 @@ Code Push → Maven Build → Tests → SonarQube → Docker Build → Push to R
 # CI/CD Pipeline Project
 
 A full end-to-end CI/CD pipeline built with GitHub Actions, Docker, and cloud deployment.
+# CI/CD Pipeline Project
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=sudha3636_cicd-pipeline-project&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=sudha3636_cicd-pipeline-project-)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=sudha3636_cicd-pipeline-project&metric=coverage)](https://sonarcloud.io/summary/new_code?id=sudha3636_cicd-pipeline-project-)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=sudha3636_cicd-pipeline-project&metric=bugs)](https://sonarcloud.io/summary/new_code?id=sudha3636_cicd-pipeline-project-)
 
 ## Tech Stack
 - **App:** Node.js / Python
