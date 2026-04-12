@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Maven
 target/
 *.class
@@ -40,3 +41,36 @@ sonar/
 
 # Coverage
 coverage/
+=======
+# Node.js
+node_modules/
+npm-debug.log*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.egg-info/
+
+# Environment & secrets
+.env
+.env.local
+.env.production
+
+# Build output
+dist/
+build/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker
+.dockerignore
+
+# IDE
+.vscode/
+.idea/
+>>>>>>> 078387f9417034b5ec6529b85cb8671a03346370
