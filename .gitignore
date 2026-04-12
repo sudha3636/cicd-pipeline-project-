@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Maven
 target/
 *.class
@@ -56,6 +57,22 @@ __pycache__/
 # Environment & secrets
 .env
 .env.local
+=======
+# Node.js
+node_modules/
+npm-debug.log*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.egg-info/
+
+# Environment & secrets
+.env
+.env.local
+>>>>>>> 078387f9417034b5ec6529b85cb8671a03346370
 .env.production
 
 # Build output
@@ -73,4 +90,7 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+<<<<<<< HEAD
+>>>>>>> 078387f9417034b5ec6529b85cb8671a03346370
+=======
 >>>>>>> 078387f9417034b5ec6529b85cb8671a03346370
