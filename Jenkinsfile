@@ -6,7 +6,7 @@ pipeline {
     }
 
     environment {
-        DOCKERHUB_USER = 'sudha3636
+        DOCKERHUB_USER = 'sudha3636'
         APP_NAME       = 'cicd-app'
         EC2_IP         = '13.127.94.193'
     }
