@@ -1,23 +1,34 @@
 pipeline {
     agent any
 
-    tools {
-        maven 'Maven-3.9'
-    }
-
     environment {
         DOCKERHUB_USER = 'sudha3636'
         APP_NAME       = 'cicd-app'
         EC2_IP         = '43.205.214.33'
+        GIT_REPO       = 'https://github.com/sudha3636/cicd-pipeline-project-.git'
+        BRANCH         = 'main'
     }
 
     stages {
 
-        stage('Clone') {
+        stage('Clone (Force Main Branch)') {
             steps {
-                git branch: 'main',
+                deleteDir()  // clean workspace (prevents branch confusion)
+
+                git branch: "${BRANCH}",
                     credentialsId: 'github-creds',
-                    url: 'https://github.com/sudha3636/cicd-pipeline-project-.git'
+                    url: "${GIT_REPO}"
+            }
+        }
+
+        stage('Debug Branch') {
+            steps {
+                sh '''
+                    echo "Current Branch:"
+                    git branch
+                    echo "Last Commit:"
+                    git log -1 --oneline
+                '''
             }
         }
 
@@ -34,11 +45,11 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                sh """
+                sh '''
                     docker build \
                         -t ${DOCKERHUB_USER}/${APP_NAME}:${BUILD_NUMBER} \
                         -t ${DOCKERHUB_USER}/${APP_NAME}:latest .
-                """
+                '''
             }
         }
 
@@ -50,8 +61,7 @@ pipeline {
                     passwordVariable: 'DOCKER_PASS'
                 )]) {
                     sh '''
-                        echo $DOCKER_PASS | \
-                            docker login -u $DOCKER_USER --password-stdin
+                        echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
                         docker push ${DOCKERHUB_USER}/${APP_NAME}:${BUILD_NUMBER}
                         docker push ${DOCKERHUB_USER}/${APP_NAME}:latest
                         docker logout
@@ -60,7 +70,7 @@ pipeline {
             }
         }
 
-        stage('Update Image Tag — GitOps') {
+        stage('Update Image Tag (GitOps)') {
             steps {
                 withCredentials([usernamePassword(
                     credentialsId: 'github-creds',
@@ -70,11 +80,15 @@ pipeline {
                     sh """
                         git config user.email 'jenkins@cicd.com'
                         git config user.name 'Jenkins'
-                        sed -i 's|image: .*|image: ${DOCKERHUB_USER}/${APP_NAME}:${BUILD_NUMBER}|g' \
-                            k8s/deployment.yaml
+
+                        echo "Updating deployment.yaml with new image..."
+                        sed -i "s|image: .*|image: ${DOCKERHUB_USER}/${APP_NAME}:${BUILD_NUMBER}|" k8s/deployment.yaml
+
                         git add k8s/deployment.yaml
-                        git commit -m '[Jenkins] Update image tag to #${BUILD_NUMBER}'
-                        git push https://${GIT_USER}:${GIT_PASS}@github.com/sudha3636/cicd-pipeline-project-.git main
+
+                        git commit -m "[Jenkins] Update image to ${BUILD_NUMBER}" || echo "No changes to commit"
+
+                        git push https://${GIT_USER}:${GIT_PASS}@github.com/sudha3636/cicd-pipeline-project-.git ${BRANCH}
                     """
                 }
             }
@@ -83,12 +97,15 @@ pipeline {
 
     post {
         success {
-            echo "✅ Done! ArgoCD will deploy build #${BUILD_NUMBER} to EC2"
-            echo "App URL: http://${EC2_IP}:30080"
+            echo "✅ SUCCESS: Build #${BUILD_NUMBER}"
+            echo "🚀 ArgoCD will auto-sync to EC2 cluster"
+            echo "🌐 App URL (NodePort): http://${EC2_IP}:30080"
         }
+
         failure {
-            echo '❌ Pipeline failed — check logs'
+            echo "❌ Pipeline FAILED — check logs carefully"
         }
+
         always {
             sh 'docker image prune -f'
         }
