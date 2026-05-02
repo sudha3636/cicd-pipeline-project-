@@ -40,6 +40,14 @@ pipeline {
             }
         }
 
+        stage('Verify Tools') {
+    steps {
+        bat 'where docker'
+        bat 'where git'
+        bat 'where powershell'
+    }
+}
+
         stage('Docker Build') {
             steps {
                 bat """
