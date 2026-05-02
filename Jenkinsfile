@@ -23,6 +23,17 @@ pipeline {
             }
         }
 
+        stage('Debug') {
+        steps {
+            bat 'echo ===== PATH ====='
+            bat 'echo %PATH%'
+            bat 'echo ===== JAVA ====='
+            bat 'java -version'
+            bat 'echo ===== MAVEN ====='
+            bat 'mvn -version'
+        }
+    }
+
         stage('Build') {
             steps {
                 bat 'mvn clean package'
@@ -78,11 +89,11 @@ pipeline {
 
     post {
         success {
-            echo "✅ ArgoCD will sync automatically"
+            echo " ArgoCD will sync automatically"
             echo "App URL: http://${EC2_IP}:30080"
         }
         failure {
-            echo "❌ Pipeline failed"
+            echo " Pipeline failed"
         }
     }
 }
