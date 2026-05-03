@@ -129,28 +129,28 @@ cicd-pipeline-project-/
 ##  Screenshots
 
 ### GitHub Actions CI — Passing
-![GitHub Actions](screenshots/01-github-actions-passing.png)
+![GitHub Actions](cicd-pipeline-project-/screenshots/01-github-actions-passing.png)
 
 ### SonarCloud Quality Gate — Passed
-![SonarCloud](screenshots/02-sonarcloud-quality-gate.png)
+![SonarCloud](cicd-pipeline-project-/screenshots/02-sonarcloud-quality-gate.png)
 
 ### Jenkins Pipeline — All Stages Green
-![Jenkins](screenshots/03-jenkins-pipeline.png)
+![Jenkins](cicd-pipeline-project-/screenshots/03-jenkins-pipeline.png)
 
 ### Docker Hub — Image Repository
-![Docker Hub](screenshots/04-dockerhub-image.png)
+![Docker Hub](cicd-pipeline-project-/screenshots/04-dockerhub-image.png)
 
 ### ArgoCD — Healthy & Synced
-![ArgoCD](screenshots/05-argocd-synced.png)
+![ArgoCD](cicd-pipeline-project-/screenshots/05-argocd-synced.png)
 
 ### App Running on EC2
-![App Live](screenshots/06-app-live-ec2.png)
+![App Live](cicd-pipeline-project-/screenshots/06-app-live-ec2.png)
 
 ### AWS EC2 Instance
-![EC2](screenshots/07-ec2-instance.png)
+![EC2](cicd-pipeline-project-/screenshots/07-ec2-instance.png)
 
 ### kubectl — Pods Running
-![kubectl](screenshots/08-kubectl-pods.png)
+![kubectl](cicd-pipeline-project-/screenshots/08-kubectl-pods.png)
 
 ---
 
