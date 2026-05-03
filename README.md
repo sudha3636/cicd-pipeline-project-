@@ -1,4 +1,4 @@
-# 🚀 End-to-End CI/CD Pipeline Project
+# End-to-End CI/CD Pipeline Project
 
 [![CI Pipeline](https://github.com/sudha3636/cicd-pipeline-project-/actions/workflows/ci.yml/badge.svg)](https://github.com/sudha3636/cicd-pipeline-project-/actions)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=sudha3636_cicd-pipeline-project-&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=sudha3636_cicd-pipeline-project-)
@@ -9,7 +9,7 @@ A production-grade CI/CD pipeline built with industry-standard DevOps tools — 
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 Developer Push
@@ -44,7 +44,7 @@ GitHub (main branch)
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Layer | Tool | Purpose |
 |---|---|---|
@@ -61,7 +61,7 @@ GitHub (main branch)
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 cicd-pipeline-project-/
@@ -89,7 +89,7 @@ cicd-pipeline-project-/
 
 ---
 
-## 🔄 Complete Pipeline Flow
+## Complete Pipeline Flow
 
 ### CI Pipeline (GitHub Actions)
 1. Developer pushes code to `main`
@@ -97,7 +97,7 @@ cicd-pipeline-project-/
 3. Maven compiles and runs 11 unit tests
 4. JaCoCo generates coverage report (70%+ required)
 5. SonarCloud scans for bugs, vulnerabilities, code smells
-6. Quality Gate must pass ✅
+6. Quality Gate must pass 
 
 ### CD Pipeline (Jenkins + ArgoCD)
 1. Jenkins detects push to `main`
@@ -108,12 +108,12 @@ cicd-pipeline-project-/
 6. Updated YAML pushed to GitHub
 7. ArgoCD detects change in `k8s/` folder
 8. ArgoCD auto-syncs → deploys to k3s on EC2
-9. Rolling update — zero downtime ✅
-10. App live at `http://EC2-IP:30080` ✅
+9. Rolling update — zero downtime 
+10. App live at `http://EC2-IP:30080`
 
 ---
 
-## 🚀 REST API Endpoints
+##  REST API Endpoints
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -126,35 +126,35 @@ cicd-pipeline-project-/
 
 ---
 
-## 📸 Screenshots
+##  Screenshots
 
 ### GitHub Actions CI — Passing
-![GitHub Actions](docs/screenshots/01-github-actions-passing.png)
+![GitHub Actions](screenshots/01-github-actions-passing.png)
 
 ### SonarCloud Quality Gate — Passed
-![SonarCloud](docs/screenshots/02-sonarcloud-quality-gate.png)
+![SonarCloud](screenshots/02-sonarcloud-quality-gate.png)
 
 ### Jenkins Pipeline — All Stages Green
-![Jenkins](docs/screenshots/03-jenkins-pipeline.png)
+![Jenkins](screenshots/03-jenkins-pipeline.png)
 
 ### Docker Hub — Image Repository
-![Docker Hub](docs/screenshots/04-dockerhub-image.png)
+![Docker Hub](screenshots/04-dockerhub-image.png)
 
 ### ArgoCD — Healthy & Synced
-![ArgoCD](docs/screenshots/05-argocd-synced.png)
+![ArgoCD](screenshots/05-argocd-synced.png)
 
 ### App Running on EC2
-![App Live](docs/screenshots/06-app-live-ec2.png)
+![App Live](screenshots/06-app-live-ec2.png)
 
 ### AWS EC2 Instance
-![EC2](docs/screenshots/07-ec2-instance.png)
+![EC2](screenshots/07-ec2-instance.png)
 
 ### kubectl — Pods Running
-![kubectl](docs/screenshots/08-kubectl-pods.png)
+![kubectl](screenshots/08-kubectl-pods.png)
 
 ---
 
-## ⚙️ Local Setup
+## Local Setup
 
 ```bash
 # Clone the repo
@@ -177,7 +177,7 @@ curl http://localhost:8080/actuator/health
 
 ---
 
-## 🐳 Docker
+##  Docker
 
 ```bash
 # Build image
@@ -192,7 +192,7 @@ curl http://localhost:8080/actuator/health
 
 ---
 
-## ☸️ Kubernetes
+##  Kubernetes
 
 ```bash
 # Deploy to k3s
@@ -209,7 +209,7 @@ curl http://<EC2-IP>:30080/api/items
 
 ---
 
-## 🌿 Branching Strategy
+## Branching Strategy
 
 | Branch | Purpose | Triggers |
 |---|---|---|
@@ -219,7 +219,7 @@ curl http://<EC2-IP>:30080/api/items
 
 ---
 
-## 👩‍💻 Author
+## Author
 
 **Sudha** — [GitHub](https://github.com/sudha3636)
 
