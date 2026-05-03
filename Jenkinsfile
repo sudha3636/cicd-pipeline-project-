@@ -9,7 +9,7 @@ pipeline {
     environment {
         DOCKERHUB_USER = 'sudha3636'
         APP_NAME       = 'cicd-app'
-        EC2_IP         = '13.126.218.214'
+        EC2_IP         = '15.206.94.116'
     }
 
     stages {
