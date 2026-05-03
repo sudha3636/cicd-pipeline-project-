@@ -3,22 +3,22 @@ name: CI Pipeline
 on:
   push:
     branches: [main, develop]
+    paths-ignore:
+      - 'k8s/**'
+      - 'README.md'
+      - 'docs/**'
   pull_request:
     branches: [main, develop]
 
 jobs:
-
   build-and-analyse:
     name: Build, Test and SonarCloud Analysis
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          # fetch-depth 0 needed for SonarCloud to analyse
-          # git blame and new code properly
           fetch-depth: 0
 
       - name: Set up JDK 17
