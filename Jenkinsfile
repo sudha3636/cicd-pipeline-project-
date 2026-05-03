@@ -64,7 +64,7 @@ pipeline {
                     passwordVariable: 'DOCKER_PASS'
                 )]) {
                     bat """
-                    echo %DOCKER_PASS% | docker login -u %DOCKER_USER% --password-stdin
+                    echo %DOCKER_PASS% | docker login docker.io -u %DOCKER_USER% --password-stdin
                     docker push %DOCKERHUB_USER%/%APP_NAME%:%BUILD_NUMBER%
                     docker push %DOCKERHUB_USER%/%APP_NAME%:latest
                     docker logout
