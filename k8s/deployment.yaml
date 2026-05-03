@@ -25,3 +25,16 @@ spec:
           limits:
             memory: "512Mi"
             cpu: "300m"
+            livenessProbe:
+  httpGet:
+    path: /api/health
+    port: 8080
+  initialDelaySeconds: 30
+  periodSeconds: 10
+
+readinessProbe:
+  httpGet:
+    path: /api/health
+    port: 8080
+  initialDelaySeconds: 10
+  periodSeconds: 5
