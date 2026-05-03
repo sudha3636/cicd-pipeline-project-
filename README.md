@@ -135,22 +135,22 @@ cicd-pipeline-project-/
 ![SonarCloud](/screenshots/sonarcloud-quality-gate.png)
 
 ### Jenkins Pipeline — All Stages Green
-![Jenkins](/screenshots/-jenkins-pipeline.png)
+![Jenkins](/screenshots/jenkins-pipeline.png)
 
 ### Docker Hub — Image Repository
-![Docker Hub](/screenshots/-dockerhub-image.png)
+![Docker Hub](/screenshots/dockerhub-image.png)
 
 ### ArgoCD — Healthy & Synced
-![ArgoCD](/screenshots/-argocd-synced.png)
+![ArgoCD](/screenshots/argocd-synced.png)
 
 ### App Running on EC2
 ![App Live](/screenshots/app-live-ec2.png)
 
 ### AWS EC2 Instance
-![EC2](/screenshots/-ec2-instance.png)
+![EC2](/screenshots/ec2-instance.png)
 
 ### kubectl — Pods Running
-![kubectl](/screenshots/-kubectl-pods.png)
+![kubectl](/screenshots/kubectl-pods.png)
 
 ---
 
