@@ -10,6 +10,10 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
+@GetMapping("/")
+public ResponseEntity<String> home() {
+    return ResponseEntity.ok("CI/CD Pipeline App is running! Version: 1.0.0");
+}
 @RequestMapping("/api")
 public class ItemController {
 
