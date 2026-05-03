@@ -129,7 +129,7 @@ cicd-pipeline-project-/
 ##  Screenshots
 
 ### GitHub Actions CI — Passing
-![GitHub Actions](screenshots/github-actions-passing.png)
+![GitHub Actions](/screenshots/github-actions-passing.png)
 
 ### SonarCloud Quality Gate — Passed
 ![SonarCloud](/screenshots/sonarcloud-quality-gate.png)
