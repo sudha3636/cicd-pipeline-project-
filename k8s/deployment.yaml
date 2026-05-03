@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: cicd-app
-        image: sudha3636/cicd-app:17
+        image: sudha3636/cicd-app:18
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
